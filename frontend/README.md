@@ -4,6 +4,7 @@
 ```
 npm install
 ```
+## Development shortcuts
 
 ### Compiles and hot-reloads for development
 ```
