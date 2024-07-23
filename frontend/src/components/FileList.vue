@@ -145,8 +145,7 @@ td {
   word-wrap: break-word; /* Break long words onto the next line */
 }
 
-.delete-button {
-  background-color: #9e1010; /* Primary color for button */
+.delete-button, .download-button {
   color: white;
   border: none;
   padding: 5px 10px;
@@ -154,19 +153,18 @@ td {
   border-radius: 4px; /* Rounded corners for button */
   font-size: 16px; /* Slightly smaller font size */
 }
-
-.delete-button:hover {
-  background-color: #6b0b0b; /* Darker shade for hover effect */
+.delete-button {
+  background-color: #ab1010; /* Red color for delete button */
+  margin-right: 15px; /* Add some margin between buttons */
+  margin-bottom: 5px;
 }
 
 .download-button {
   background-color: #3137C9; /* Primary color for button */
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-  border-radius: 4px; /* Rounded corners for button */
-  font-size: 16px; /* Slightly smaller font size */
+}
+
+.delete-button:hover {
+  background-color: #6b0b0b; /* Darker shade for hover effect */
 }
 
 .download-button:hover {

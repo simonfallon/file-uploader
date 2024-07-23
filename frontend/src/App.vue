@@ -40,7 +40,7 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 0px;
-  background-color: #f7f7ff;
+  background-color: #f1f1fe;
   min-height: 100vh;
 }
 .custom-table th {
