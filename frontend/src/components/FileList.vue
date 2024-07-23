@@ -62,69 +62,99 @@ export default {
   },
 };
 </script>
-  
+
 <style scoped>
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top: 20px; /* Add some margin at the top */
 }
 
 .table-container {
-  width: 60%; /* Adjust width as needed */
-  max-height: 400px; /* Adjust height as needed */
-  overflow-y: auto; /* Enables vertical scrolling */
-  border: 1px solid black; /* Adds border around the table container */
-  background-color: white; /* White background for the table itself */
+  width: 100%; /* Full width */
+  max-width: 1200px; /* Limit the width */
+  max-height: 400px; /* Limit the height and enable scrolling */
+  overflow-y: auto; /* Vertical scrolling */
+  border: 1px solid #ddd; /* Light border for the table container */
+  border-radius: 8px; /* Rounded corners */
+  background: linear-gradient(135deg, #ffffff, #c3cfe2); /* Light blue gradient */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 10px; /* Add padding */
+}
+.table-container th {
+  font-size: 1.3em; /* Adjust the font size as needed */
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  table-layout: fixed; /* Ensures columns do not expand excessively */
+  table-layout: auto; /* Adjust column widths based on content */
 }
 
 thead th {
   position: sticky;
   top: 0;
-  background-color: #f4f4f4; /* Ensures header has a background color */
-  border: 1px solid black; /* Adds border to table header cells */
-  z-index: 1; /* Ensures header is above the table content */
+  background-color: #0b437b; /* Primary color */
+  color: white;
+  border: 1px solid #ddd; /* Light border for header cells */
+  z-index: 1; /* Keeps header above content */
 }
 
 th, td {
   padding: 10px;
   text-align: left;
-  border: 1px solid black; /* Adds black border to table cells */
+  border: 1px solid #ddd; /* Light border for table cells */
 }
 
 thead th:nth-child(1), tbody td:nth-child(1) {
-  width: 60%; /* Width for Filename column */
+  width: 40%; /* Width for Filename column */
 }
 
 thead th:nth-child(2), tbody td:nth-child(2) {
-  width: 30%; /* Width for Upload Date column */
+  width: 40%; /* Width for Upload Date column */
 }
 
 thead th:nth-child(3), tbody td:nth-child(3) {
-  width: 10%; /* Narrow width for Actions column */
+  width: 20%; /* Narrow width for Actions column */
   text-align: center; /* Center-align content in the Actions column */
 }
 
 td {
-  word-wrap: break-word; /* Allows long words to break and wrap onto the next line */
+  word-wrap: break-word; /* Break long words onto the next line */
 }
 
 button {
-  background-color: #f44336;
+  background-color: #9e1010; /* Primary color for button */
   color: white;
   border: none;
   padding: 5px 10px;
   cursor: pointer;
+  border-radius: 4px; /* Rounded corners for button */
+  font-size: 16px; /* Slightly smaller font size */
 }
 
 button:hover {
-  background-color: #d32f2f;
+  background-color: #155a8a; /* Darker shade for hover effect */
+}
+
+.no-files-message {
+  color: #1976d2; /* Blue color for "No files available" message */
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .table-container {
+    width: 95%; /* Make table container almost full width on smaller screens */
+  }
+
+  table {
+    font-size: 14px; /* Slightly smaller text on smaller screens */
+  }
+
+  thead th, tbody td {
+    padding: 8px; /* Reduced padding on smaller screens */
+  }
 }
 </style>
