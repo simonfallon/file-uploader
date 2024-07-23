@@ -73,4 +73,4 @@ The frontend application will be available at http://localhost:8080.
 
 - Open the frontend application [in your browser](http://localhost:8080).
 - Use the file upload form to upload files.
-- View the list of uploaded files and delete them as needed.
+- View the list of uploaded files to delete or download them as needed.
