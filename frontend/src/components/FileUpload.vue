@@ -90,7 +90,7 @@ export default {
 
 .select-button,
 .upload-button {
-  background-color: #0b437b; /* Vuetify primary color */
+  background-color: #3137C9; /* Vuetify primary color */
   color: white;
   border: none;
   border-radius: 4px;
@@ -102,7 +102,7 @@ export default {
 
 .select-button:hover,
 .upload-button:hover {
-  background-color: #0b437b; /* Darker shade for hover effect */
+  background-color: #170f81; /* Darker shade for hover effect */
 }
 
 .file-name {

@@ -88,16 +88,17 @@ export default {
   align-items: center;
   flex-direction: column;
   margin-top: 20px; /* Add some margin at the top */
+  /* margin-bottom: 0px; */
 }
 
 .table-container {
   width: 100%; /* Full width */
   max-width: 1200px; /* Limit the width */
-  max-height: 400px; /* Limit the height and enable scrolling */
+  max-height: 500px; /* Limit the height and enable scrolling */
   overflow-y: auto; /* Vertical scrolling */
   border: 1px solid #ddd; /* Light border for the table container */
   border-radius: 8px; /* Rounded corners */
-  background: linear-gradient(135deg, #ffffff, #c3cfe2); /* Light blue gradient */
+  background: linear-gradient(135deg, #ffffff, #DEE4FC); /* Light blue gradient */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   padding: 10px; /* Add padding */
 }
@@ -159,7 +160,7 @@ td {
 }
 
 .download-button {
-  background-color: #3d33ce; /* Primary color for button */
+  background-color: #3137C9; /* Primary color for button */
   color: white;
   border: none;
   padding: 5px 10px;

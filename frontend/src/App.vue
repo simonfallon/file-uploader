@@ -34,12 +34,14 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Tahoma;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   margin-top: 0px;
+  background-color: #f7f7ff;
+  min-height: 100vh;
 }
 .custom-table th {
   font-size: 10em; /* Adjust the font size as needed */
