@@ -32,6 +32,7 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage }).single('file');
+const MILLIS_IN_MINUTE = 60000;
 
 export const uploadFile = (req: Request, res: Response) => {
   upload(req, res, async (err) => {
@@ -44,7 +45,9 @@ export const uploadFile = (req: Request, res: Response) => {
       return res.status(400).json({ message: 'No file provided' });
     }
     const { filename } = req.file;
-    const uploadDate = new Date().toISOString();
+    const utcDate = new Date();
+    const timeZoneOffset = utcDate.getTimezoneOffset() * MILLIS_IN_MINUTE;
+    const uploadDate = new Date(utcDate.getTime() - timeZoneOffset).toISOString();
     await pool.query(`INSERT INTO files (filename, upload_date) VALUES ('${filename}', '${uploadDate}')`);
     res.status(200).json({ message: `File ${filename} uploaded successfully`, filename: filename });
   });
