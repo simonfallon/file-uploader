@@ -12,7 +12,6 @@ jspm_packages/
 .env
 
 # Build output
-dist/
 build/
 
 # Mac system files
