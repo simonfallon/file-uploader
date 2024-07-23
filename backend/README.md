@@ -19,7 +19,7 @@ Set up PostgreSQL database excecuting:
 psql -U your_db_user -d your_db_name -f schema.sql
 ```
 
-#### Create a .env file in the root
+### Create a .env file in the root
 
 Add your environment variables:
 
