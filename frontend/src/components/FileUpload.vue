@@ -36,6 +36,7 @@ export default {
     },
     onFileChange(event) {
       this.selectedFile = event.target.files[0]; // Update selected file
+      this.uploadMessage = null; // Clear previous upload message
     },
     async uploadFile() {
       if (!this.selectedFile) {
