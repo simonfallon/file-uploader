@@ -156,11 +156,12 @@ td {
 .delete-button {
   background-color: #ab1010; /* Red color for delete button */
   margin-right: 15px; /* Add some margin between buttons */
-  margin-bottom: 5px;
+  margin-bottom: 1.5px;   /* Margin for mobile view */
 }
 
 .download-button {
   background-color: #3137C9; /* Primary color for button */
+  margin-top: 1.5px;  /* Margin for mobile view */
 }
 
 .delete-button:hover {
