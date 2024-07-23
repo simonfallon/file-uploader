@@ -28,6 +28,7 @@
 
 <script>
 import axios from 'axios';
+const apiUrl = process.env.VUE_APP_API_URL;
 
 export default {
   data() {
@@ -41,7 +42,7 @@ export default {
   methods: {
     async fetchFiles() {
       try {
-        const response = await axios.get('http://localhost:3000/api/files');
+        const response = await axios.get(`${apiUrl}/files`);
         this.files = response.data;
       } catch (error) {
         console.error('Error fetching files:', error);
@@ -53,7 +54,7 @@ export default {
       }
 
       try {
-        await axios.delete(`http://localhost:3000/api/files/${filename}`);
+        await axios.delete(`${apiUrl}/files/${filename}`);
         this.fetchFiles(); // Refresh the file list
         alert(`File ${filename} deleted successfully!`); // Notify the user
       } catch (error) {
@@ -62,7 +63,7 @@ export default {
     },
     async downloadFile(filename) {
       try {
-        const response = await axios.get(`http://localhost:3000/api/download/${filename}`, {
+        const response = await axios.get(`${apiUrl}/download/${filename}`, {
           responseType: 'blob', // Important: responseType must be 'blob'
         });
         const url = window.URL.createObjectURL(new Blob([response.data]));
@@ -88,13 +89,12 @@ export default {
   align-items: center;
   flex-direction: column;
   margin-top: 20px; /* Add some margin at the top */
-  /* margin-bottom: 0px; */
 }
 
 .table-container {
   width: 100%; /* Full width */
   max-width: 1200px; /* Limit the width */
-  max-height: 500px; /* Limit the height and enable scrolling */
+  max-height: 600px; /* Limit the height and enable scrolling */
   overflow-y: auto; /* Vertical scrolling */
   border: 1px solid #ddd; /* Light border for the table container */
   border-radius: 8px; /* Rounded corners */

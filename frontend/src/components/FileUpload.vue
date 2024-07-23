@@ -54,7 +54,7 @@ export default {
       formData.append('file', this.selectedFile);
 
       try {
-        const response = await axios.post('http://localhost:3000/api/upload', formData, {
+        const response = await axios.post(`${process.env.VUE_APP_API_URL}/upload`, formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
@@ -67,6 +67,7 @@ export default {
         console.log('File uploaded:', response.data);
       } catch (error) {
         console.error('File upload failed', error);
+        alert(`File upload failed: ${error.message}`); // Notify the user
         this.uploadMessage = `File upload failed: ${error.message}`;
       }
     },
