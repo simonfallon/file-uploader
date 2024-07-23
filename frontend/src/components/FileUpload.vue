@@ -1,6 +1,6 @@
 <template>
   <div class="upload-container">
-    <h2>Upload Your CV</h2>
+    <h2>Upload Your CV in PDF format</h2>
     <!-- Container to hold the buttons and file name display -->
     <div class="button-container">
       <!-- Button to trigger file input -->
@@ -40,6 +40,12 @@ export default {
     async uploadFile() {
       if (!this.selectedFile) {
         this.uploadMessage = 'Please select a file';
+        return;
+      }
+
+      if (this.selectedFile.type !== 'application/pdf') {
+        alert('Only PDF files are allowed'); // Notify the user
+        this.uploadMessage = 'Only PDF files are allowed';
         return;
       }
 
@@ -104,7 +110,8 @@ export default {
 }
 
 .upload-message {
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: bold;
   color: #155a8a; /* Red for error messages */
 }
 </style>
