@@ -70,3 +70,14 @@ export const deleteFile = async (req: Request, res: Response) => {
     res.status(200).json({ message: 'File deleted successfully' });
   });
 };
+
+export const getFile = (req: Request, res: Response) => {
+  const { filename } = req.params;
+  const file = path.join(__dirname, '..', 'uploads', filename);
+  res.download(file, (err) => {
+    if (err) {
+      console.error('File download error:', err);
+      res.status(500).json({ message: 'File download failed', err });
+    }
+  });
+};
