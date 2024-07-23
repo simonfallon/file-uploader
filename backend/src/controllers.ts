@@ -71,7 +71,7 @@ export const deleteFile = async (req: Request, res: Response) => {
   });
 };
 
-export const getFile = (req: Request, res: Response) => {
+export const downloadFile = (req: Request, res: Response) => {
   const { filename } = req.params;
   const file = path.join(__dirname, '..', 'uploads', filename);
   res.download(file, (err) => {
