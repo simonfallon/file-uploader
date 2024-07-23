@@ -98,7 +98,7 @@ export default {
   overflow-y: auto; /* Vertical scrolling */
   border: 1px solid #ddd; /* Light border for the table container */
   border-radius: 8px; /* Rounded corners */
-  background: linear-gradient(135deg, #ffffff, #DEE4FC); /* Light blue gradient */
+  background: linear-gradient(135deg, #ffffff, #e0e4fc); /* Light blue gradient */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   padding: 10px; /* Add padding */
 }
