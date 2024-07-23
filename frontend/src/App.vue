@@ -39,7 +39,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 20px;
+  margin-top: 0px;
 }
 .custom-table th {
   font-size: 10em; /* Adjust the font size as needed */

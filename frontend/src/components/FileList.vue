@@ -15,7 +15,8 @@
             <td>{{ file.filename }}</td>
             <td>{{ new Date(file.upload_date).toLocaleString() }}</td>
             <td>
-              <button @click="deleteFile(file.filename)">Delete</button>
+              <button class="delete-button" @click="deleteFile(file.filename)">Delete</button>
+              <button class="download-button" @click="downloadFile(file.filename)">Download</button>
             </td>
           </tr>
         </tbody>
@@ -59,6 +60,23 @@ export default {
         console.error('Error deleting file:', error);
       }
     },
+    async downloadFile(filename) {
+      try {
+        const response = await axios.get(`http://localhost:3000/api/download/${filename}`, {
+          responseType: 'blob', // Important: responseType must be 'blob'
+        });
+        const url = window.URL.createObjectURL(new Blob([response.data]));
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('download', filename);
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        alert(`File ${filename} downloaded successfully!`); // Notify the user
+      } catch (error) {
+        console.error('Error downloading file:', error);
+      }
+    },
   },
 };
 </script>
@@ -83,6 +101,7 @@ export default {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   padding: 10px; /* Add padding */
 }
+
 .table-container th {
   font-size: 1.3em; /* Adjust the font size as needed */
 }
@@ -125,7 +144,7 @@ td {
   word-wrap: break-word; /* Break long words onto the next line */
 }
 
-button {
+.delete-button {
   background-color: #9e1010; /* Primary color for button */
   color: white;
   border: none;
@@ -135,8 +154,22 @@ button {
   font-size: 16px; /* Slightly smaller font size */
 }
 
-button:hover {
-  background-color: #155a8a; /* Darker shade for hover effect */
+.delete-button:hover {
+  background-color: #6b0b0b; /* Darker shade for hover effect */
+}
+
+.download-button {
+  background-color: #3d33ce; /* Primary color for button */
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px; /* Rounded corners for button */
+  font-size: 16px; /* Slightly smaller font size */
+}
+
+.download-button:hover {
+  background-color: #170f81; /* Darker shade for hover effect */
 }
 
 .no-files-message {

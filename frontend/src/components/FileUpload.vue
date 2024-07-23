@@ -45,6 +45,7 @@ export default {
 
       if (this.selectedFile.type !== 'application/pdf') {
         alert('Only PDF files are allowed'); // Notify the user
+        this.selectedFile = null; // Clear the selected file
         this.uploadMessage = 'Only PDF files are allowed';
         return;
       }
