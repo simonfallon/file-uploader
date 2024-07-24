@@ -1,6 +1,6 @@
 <template>
   <div class="upload-container">
-    <h2>Upload Your CV in PDF format</h2>
+    <h2>Select your CV in PDF format</h2>
     <!-- Container to hold the buttons and file name display -->
     <div class="button-container">
       <!-- Button to trigger file input -->

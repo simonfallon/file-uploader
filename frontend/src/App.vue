@@ -1,5 +1,11 @@
 <template>
   <v-app>
+    <v-app-bar app color="primary" dark>
+      <v-toolbar-title class="d-flex align-center">
+        <span class="app-title">Upload your </span>
+        <img alt="App logo" src="/logo.png" class="app-logo mr-3" siz>
+      </v-toolbar-title>
+    </v-app-bar>
     <v-container fluid fill-height>
       <v-row align="center" justify="center">
         <v-col cols="12" sm="8" md="6">
@@ -33,16 +39,19 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Tahoma;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 0px;
-  background-color: #efefff;
-  min-height: 100vh;
+.app-logo {
+  height: 40px; /* Adjust this value to ensure the logo is not too big */
+  width: auto;  /* Maintain aspect ratio */
+  margin-left: 10px;
 }
+.app-title {
+  font-size: 2rem; /* Adjust this value to ensure the text size matches your needs */
+  /* Bold and italicize the text */
+  font-weight: bold;
+  line-height: 40px; /* Adjust this value to ensure the text size matches the logo height */
+  font-family: Tahoma;
+}
+
 .custom-table th {
   font-size: 10em; /* Adjust the font size as needed */
 }
