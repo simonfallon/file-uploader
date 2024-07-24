@@ -2,8 +2,9 @@
   "name": "file-uploader",
   "version": "1.0.0",
   "scripts": {
-    "build": "cd frontend && npm run build",
-    "start": "cd backend && npm start"
+    "build": "npm --prefix frontend install && npm --prefix frontend run build && npm --prefix backend install && npm --prefix backend run build",
+    "start": "npm --prefix backend start",
+    "heroku-postbuild": "npm --prefix frontend install && npm --prefix frontend run build"
   },
   "dependencies": {
     "axios": "^1.7.2",

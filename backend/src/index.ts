@@ -15,7 +15,7 @@ app.use(express.json());
 app.use('/api', router);
 
 // Serve static files from the Vue app
-const frontendPath = path.join(__dirname, '..', 'frontend', 'dist');
+const frontendPath = path.join(__dirname, '../..', 'frontend', 'dist');
 app.use(express.static(frontendPath));
 
 // Create the uploads directory if it doesn't exist
