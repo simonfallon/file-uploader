@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const controllers_1 = require("./controllers");
+const router = (0, express_1.Router)();
+router.post('/upload', controllers_1.uploadFile);
+router.get('/files', controllers_1.listFiles);
+router.delete('/files/:filename', controllers_1.deleteFile);
+router.get('/download/:filename', controllers_1.downloadFile);
+exports.default = router;
