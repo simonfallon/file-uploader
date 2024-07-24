@@ -1,8 +1,17 @@
 # Backend
 
-## Project setup
+## Create a .env file in the root
+
+Add your environment variables:
+
 ```
-npm install
+PORT=3000
+DB_USER=your_db_user
+DB_HOST=localhost
+DB_NAME=your_db_name
+DB_PASS=your_db_password
+DB_PORT=5432
+ENVIROMENT=local
 ```
 
 ## DB Setup
@@ -17,20 +26,6 @@ Set up PostgreSQL database excecuting:
 
 ```
 psql -U your_db_user -d your_db_name -f schema.sql
-```
-
-### Create a .env file in the root
-
-Add your environment variables:
-
-```
-PORT=3000
-DB_USER=your_db_user
-DB_HOST=localhost
-DB_NAME=your_db_name
-DB_PASS=your_db_password
-DB_PORT=5432
-ENVIROMENT=local
 ```
 
 ## Development shortcuts 

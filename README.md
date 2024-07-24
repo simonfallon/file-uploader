@@ -27,50 +27,23 @@ cd file-uploader
 
 ### 2. Install Dependencies
 
-#### For the Backend 
-
-Navigate to the backend directory and install the backend dependencies.
-
-```bash
-cd backend
-npm install
+```
+npm build
 ```
 
-#### For the Frontend
+### 3. Set up .env files and DB
 
-Navigate to the frontend directory and install the frontend dependencies.
+Configure .env files in each folder as described in their README. 
+Set up DB as described in backend/README.md
 
-```bash
-cd ../frontend
-npm install
+### 4. Run the Application
+
 ```
-
-### 3. Run the Application
-
-#### Start  the Backend
-
-Navigate to the backend directory and start the server.
-
-```bash
-cd ../backend
 npm start
 ```
+ 
+### 5. Usage
 
-The backend server will run on http://localhost:3000.
-
-#### Start the Frontend
-
-Navigate to the frontend directory and start the development server.
-
-```bash
-cd ../frontend
-npm run serve
-```
-
-The frontend application will be available at http://localhost:8080.
-
-### 4. Usage
-
-- Open the frontend application [in your browser](http://localhost:8080).
+- Open the frontend application [in your browser](http://localhost:3000).
 - Use the file upload form to upload files.
 - View the list of uploaded files to delete or download them as needed.
